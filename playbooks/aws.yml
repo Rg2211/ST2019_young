@@ -1,6 +1,0 @@
-- hosts: localhost
-  tasks:
-    - ec2_instance_facts:
-           aws_access_key: 'AKIAJSKKWGGRORM6OBJA'
-           aws_secret_key: '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'
-           region: 'ap-south-1'
