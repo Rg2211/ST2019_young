@@ -38,7 +38,7 @@ for doc in con_list[1:]:
 	
 	<td><a href="http://192.168.43.206/cgi-bin/doc_stop.py?s={}stop</a></td>
 	<td><a href="http://192.168.43.206/cgi-bin/doc_terminate.py?s={}terminate</a></td>
-	<td><a href="http://192.168.43.206/cgi-bin/doc_console.py?s={}console</a></td>
+	<td><a target='myconsole' href='http://192.168.43.206:4200'>console</a></td>
 	</tr>
 	""".format(doc_name,image_name,status,doc_name,doc_name,doc_name))
 print("</table>")
