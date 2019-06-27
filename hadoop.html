@@ -51,10 +51,27 @@
 function yesnoCheck() {
     if (document.getElementById('yesCheck').checked) {
         document.getElementById('ifYes').style.visibility = 'visible';
+        document.getElementById('ifNo').style.visibility = 'hidden';
     }
-    else document.getElementById('ifYes').style.visibility = 'hidden';
+    else 
+	{
+	 document.getElementById('ifYes').style.visibility = 'hidden';
 
-}
+        document.getElementById('ifNo').style.visibility = 'visible';
+}}
+</script>
+<script>
+function yesnoCheck1() {
+    if (document.getElementById('yesCheck1').checked) {
+        document.getElementById('ifY').style.visibility = 'visible';
+        document.getElementById('ifN').style.visibility = 'hidden';
+    }
+    else 
+        {
+         document.getElementById('ifY').style.visibility = 'hidden';
+
+        document.getElementById('ifN').style.visibility = 'visible';
+}}
 </script>
 
 	</head>
@@ -70,23 +87,48 @@ function yesnoCheck() {
 		<div id="divMsg1" style=" text-align: center; display:none" >
 
       Data Node <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"> 
-      Name Node <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>
+Name Node <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"><br>
     </div>
 	<div id="ifYes" style="visibility:hidden">
      <form action="http://192.168.43.206/cgi-bin/datanode.py">
+        Master's ip is : <input type='text' id='yes' name='master_ip'/><br>i
+        Folder name is :<input type='text' id='acc' name='folder'/>
+    <input type=submit />
+    </form>
+    </div> 
+ <div id="ifNo" style="visibility:hidden">
+     <form action="http://192.168.43.206/cgi-bin/namenode.py">
         Master's ip : <input type='text' id='yes' name='master_ip'/><br>
         Folder name <input type='text' id='acc' name='folder'/>
     <input type=submit />
     </form>
-    </div> 
+
 
 	         </div>
 
 		<br><input type="button" value="Computing Cluster" onClick="showHideDiv2('divMsg2')"/>
                  
 		<div id="divMsg2" style=" text-align: center; display:none" >
-		<br><input type="button" value="Job Tracker" action="http://192.168.43.207" />
-			<br><input type="button" value="Task Tracker" action="http://192.168.43.345"/>
+
+      Job Tracker <input type="radio" onclick="javascript:yesnoCheck1();" name="yesno" id="yesCheck1">
+Task Tracker <input type="radio" onclick="javascript:yesnoCheck1();" name="yesno" id="yesCheck1"><br>
+        <div id="ifY" style="visibility:hidden">
+     <form action="http://192.168.43.206/cgi-bin/jt.py">
+        Master's ip is : <input type='text' id='yes' name='master_ip'/><br>
+        Job Tracker ip  is :<input type='text' id='acc' name='jt_ip'/>
+    <input type=submit />
+    </form>
+    </div>
+ <div id="ifN" style="visibility:hidden">
+<form action="http://192.168.43.206/cgi-bin/td.py">
+        Maste's ip : <input type='text' id='yes' name='master_ip'/><br>
+        Job Tracker ip <input type='text' id='acc' name='jt_ip'/>
+    <input type=submit />
+    </form>
+</div>
+
+                 </div>
+
 
 		</div>
 		</div>
