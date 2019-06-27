@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<title>Show/Hide Div on Button Click using JavaScript.</title>
+		<script type="text/javascript">
+			function showHideDiv(ele) {
+				var srcElement = document.getElementById(ele);
+	if (srcElement != null) {
+		if (srcElement.style.display == "block") {
+			srcElement.style.display = 'none';
+					}
+		else {
+			srcElement.style.display = 'block';
+					}
+		return false;
+		}
+			}
+		</script>
+
+		<script type="text/javascript">
+			function showHideDiv1(ele) {
+				var srcElement = document.getElementById(ele);
+	if (srcElement != null) {
+		if (srcElement.style.display == "block") {
+			srcElement.style.display = 'none';
+					}
+		else {
+			srcElement.style.display = 'block';
+					}
+		return false;
+		}
+			}
+		</script>
+
+
+		<script type="text/javascript">
+			function showHideDiv2(ele) {
+				var srcElement = document.getElementById(ele);
+	if (srcElement != null) {
+		if (srcElement.style.display == "block") {
+			srcElement.style.display = 'none';
+					}
+		else {
+			srcElement.style.display = 'block';
+					}
+		return false;
+		}
+			}
+		</script>
+
+<script>
+function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.visibility = 'visible';
+    }
+    else document.getElementById('ifYes').style.visibility = 'hidden';
+
+}
+</script>
+
+	</head>
+<body>
+<center>
+	
+		<button onClick="showHideDiv('divMsg')">Hadoop Cluster</button><br><br>
+		<div id="divMsg" style=" text-align: center; display:none" >
+                
+		<input type="button" value="Storage Cluster" onClick="showHideDiv1('divMsg1')"/>
+
+
+		<div id="divMsg1" style=" text-align: center; display:none" >
+
+      Data Node <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"> 
+      Name Node <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>
+    </div>
+	<div id="ifYes" style="visibility:hidden">
+     <form action="http://192.168.43.206/cgi-bin/datanode.py">
+        Master's ip : <input type='text' id='yes' name='master_ip'/><br>
+        Folder name <input type='text' id='acc' name='folder'/>
+    <input type=submit />
+    </form>
+    </div> 
+
+	         </div>
+
+		<br><input type="button" value="Computing Cluster" onClick="showHideDiv2('divMsg2')"/>
+                 
+		<div id="divMsg2" style=" text-align: center; display:none" >
+		<br><input type="button" value="Job Tracker" action="http://192.168.43.207" />
+			<br><input type="button" value="Task Tracker" action="http://192.168.43.345"/>
+
+		</div>
+		</div>
+	</center>
+
+</body>
+
+</html>
+
